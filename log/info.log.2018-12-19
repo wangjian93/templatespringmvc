@@ -1,0 +1,74 @@
+2018-12-19 09:28:27 [ INFO ] [ org.springframework.test.context.support.DefaultTestContextBootstrapper ] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-19 09:28:27 [ INFO ] [ org.springframework.test.context.support.DefaultTestContextBootstrapper ] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@71423665, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@20398b7c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fc6f14e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56235b8e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3632be31]
+2018-12-19 09:28:27 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-core.xml]
+2018-12-19 09:28:28 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-hibernate.xml]
+2018-12-19 09:28:28 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-resource.xml]
+2018-12-19 09:28:28 [ INFO ] [ org.springframework.context.support.GenericApplicationContext ] Refreshing org.springframework.context.support.GenericApplicationContext@1f7030a6: startup date [Wed Dec 19 09:28:28 CST 2018]; root of context hierarchy
+2018-12-19 09:28:29 [ INFO ] [ com.alibaba.druid.pool.DruidDataSource ] {dataSource-1} inited
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.orm.hibernate5.HibernateTransactionManager ] Using DataSource [{
+	CreateTime:"2018-12-19 09:28:28",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1612496268, ConnectTime:"2018-12-19 09:28:29", UseCount:2, LastActiveTime:"2018-12-19 09:28:30"}
+	]
+}
+
+[
+	{
+	ID:1612496268, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate5.HibernateTemplate)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final org.springframework.orm.hibernate5.HibernateTemplate org.springframework.orm.hibernate5.support.HibernateDaoSupport.getHibernateTemplate()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [protected final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.checkDaoConfig()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [protected final org.hibernate.Session org.springframework.orm.hibernate5.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate5.support.HibernateDaoSupport.getSessionFactory()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ WARN ] [ org.springframework.aop.framework.CglibAopProxy ] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:28:30 [ INFO ] [ org.springframework.context.support.GenericApplicationContext ] Closing org.springframework.context.support.GenericApplicationContext@1f7030a6: startup date [Wed Dec 19 09:28:28 CST 2018]; root of context hierarchy
+2018-12-19 09:28:30 [ INFO ] [ com.alibaba.druid.pool.DruidDataSource ] {dataSource-1} closed
+2018-12-19 09:29:57 [ INFO ] [ org.springframework.test.context.support.DefaultTestContextBootstrapper ] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-12-19 09:29:57 [ INFO ] [ org.springframework.test.context.support.DefaultTestContextBootstrapper ] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@71423665, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@20398b7c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fc6f14e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56235b8e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3632be31]
+2018-12-19 09:29:57 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-core.xml]
+2018-12-19 09:29:58 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-hibernate.xml]
+2018-12-19 09:29:58 [ INFO ] [ org.springframework.beans.factory.xml.XmlBeanDefinitionReader ] Loading XML bean definitions from file [/Users/wangjian/IdeaProjects/templatespringmvc/target/classes/applicationContext-resource.xml]
+2018-12-19 09:29:58 [ INFO ] [ org.springframework.context.support.GenericApplicationContext ] Refreshing org.springframework.context.support.GenericApplicationContext@1f7030a6: startup date [Wed Dec 19 09:29:58 CST 2018]; root of context hierarchy
+2018-12-19 09:30:00 [ INFO ] [ com.alibaba.druid.pool.DruidDataSource ] {dataSource-1} inited
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.orm.hibernate5.HibernateTransactionManager ] Using DataSource [{
+	CreateTime:"2018-12-19 09:29:59",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1643299824, ConnectTime:"2018-12-19 09:30:00", UseCount:2, LastActiveTime:"2018-12-19 09:30:02"}
+	]
+}
+
+[
+	{
+	ID:1643299824, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate5.support.HibernateDaoSupport.getSessionFactory()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate5.HibernateTemplate)] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final org.springframework.orm.hibernate5.HibernateTemplate org.springframework.orm.hibernate5.support.HibernateDaoSupport.getHibernateTemplate()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [protected final void org.springframework.orm.hibernate5.support.HibernateDaoSupport.checkDaoConfig()] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [protected final org.hibernate.Session org.springframework.orm.hibernate5.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ WARN ] [ org.springframework.aop.framework.CglibAopProxy ] Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.aop.framework.CglibAopProxy ] Final method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] cannot get proxied via CGLIB: Calls to this method will NOT be routed to the target instance and might lead to NPEs against uninitialized fields in the proxy instance.
+2018-12-19 09:30:02 [ INFO ] [ org.springframework.context.support.GenericApplicationContext ] Closing org.springframework.context.support.GenericApplicationContext@1f7030a6: startup date [Wed Dec 19 09:29:58 CST 2018]; root of context hierarchy
+2018-12-19 09:30:02 [ INFO ] [ com.alibaba.druid.pool.DruidDataSource ] {dataSource-1} closed

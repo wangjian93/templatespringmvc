@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- hibernate 配置 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.ivo.org.entity</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <!--<prop key="hibernate.dialect">com.ivo.dao.hibernate.MySQL5DialectUTF8</prop>-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.use_sql_comments">true</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="current_session_context_class">thread</prop>
+                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <!-- 事务管理 Annotation配置 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 开启事务注解扫描 -->
+    <!--<tx:annotation-driven/>-->
+
+    <!-- 具体定义哪些方法需要加上事务管理 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!-- 需要由交给spring的aop来进行代理的方法的集合，如果应用有自己的方法需有由spring来进行事务控制必须添加方法-->
+            <!-- 读取数据方法，一般采用只读事务-->
+            <tx:method name="get*" isolation="DEFAULT" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="load*" isolation="DEFAULT" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="select*" isolation="DEFAULT" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="find*" isolation="DEFAULT" propagation="SUPPORTS" read-only="true" />
+            <!-- 查询的日志隔离级别 为DEFAULT，默认也是DEFAULT，事务的传播行为，SUPPORTS，如果之前开启过事务，就加入那个事务，没有就非事务的方式运行 -->
+            <tx:method name="query*" isolation="DEFAULT" propagation="SUPPORTS" read-only="true" />
+            <!-- 除开以上定义的方法，其他方法的事务传播行为为REQUIRED,即有事务就加入事务，没有事务就新建一个事务 -->
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--&lt;!&ndash; 利用AOP方式给方法加上事务管理 &ndash;&gt;-->
+    <aop:config>
+        <aop:pointcut expression="execution(public * com.ivo..service..*.*(..)) || execution(public * com.ivo..dao..*.*(..))"
+                      id="txPo"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPo"/>
+    </aop:config>
+
+    <!-- hibernate的封装支持 -->
+    <bean id="hibernateCaller" class="com.ivo.dao.hibernate.HibernateCaller">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>
