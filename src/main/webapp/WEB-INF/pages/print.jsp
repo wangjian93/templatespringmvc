@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: wangjian
@@ -36,7 +35,7 @@
 <script>
 
     var chartOptins = {
-        'data': '/listTree',
+        'data': 'listSignedDeptTree',
         'nodeTitle': 'deptName',
         'nodeContent': 'deptHeader',
         'direction': 't2b',
@@ -69,7 +68,7 @@
         // }
         var deptType = data.deptType;
         switch (deptType) {
-            case 0 : $node.css('border-color', 'grey'); break;
+            case 2 : $node.css('border-color', 'grey'); break;
             default : break;
         }
     };

@@ -160,5 +160,9 @@ public class AdjustController {
         return JsonResult.ok();
     }
 
+    @RequestMapping("/print")
+    public String print() {
+        return "print";
+    }
 
 }

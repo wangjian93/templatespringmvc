@@ -11,19 +11,80 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap core CSS -->
+<!-- Jquery -->
+<script src="<%=request.getContextPath()%>/static/plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap -->
 <link href="<%=request.getContextPath()%>/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/static/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- bootstrap-table CSS -->
+
+<!-- bootstrap-table -->
 <link href="<%=request.getContextPath()%>/static/plugins/bootstrapTable/bootstrap-table.min.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/static/plugins/bootstrapTable/bootstrap-table.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/plugins/bootstrapTable/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/plugins/bootstrapTable/extensions/treegrid/bootstrap-table-treegrid.min.js"></script>
 
-<!-- orgChart CSS -->
+
+<!-- jquery-treegrid -->
+<link href="<%=request.getContextPath()%>/static/plugins/jquery/treegrid/jquery.treegrid.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/static/plugins/jquery/treegrid/jquery.treegrid.min.js"></script>
+
+
+<!-- orgChart -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/plugins/orgChart/css/font-awesome.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/plugins/orgChart/css/jquery.orgchart.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/plugins/orgChart/css/style.css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/html2canvas.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/jspdf.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/jquery.orgchart.js"></script>
+
+
 
 <!-- zTree CSS -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/plugins/zTree/css/metroStyle/metroStyle.css" type="text/css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.exedit.js"></script>
+
+
+
+
+<!-- loading -->
+<link href="<%=request.getContextPath()%>/static/plugins/loading/load.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/static/plugins/loading/load.js"></script>
+
+
+
+<!-- layer -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/layer/layer.js"></script>
+
+
+
+<!-- orgTree -->
+<%--<link href="<%=request.getContextPath()%>/static/plugins/orgTree/css/clear.css" rel="stylesheet">--%>
+<%--<link href="<%=request.getContextPath()%>/static/plugins/orgTree/css/message.css" rel="stylesheet">--%>
+<%--<link href="<%=request.getContextPath()%>/static/plugins/orgTree/css/pop.css" rel="stylesheet">--%>
+<%--<link href="<%=request.getContextPath()%>/static/plugins/orgTree/css/xgrid.css" rel="stylesheet">--%>
+<%--<link href="<%=request.getContextPath()%>/static/plugins/orgTree/zTreeStyle.css" rel="stylesheet">--%>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/xquery.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/xgrid.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/xpanel.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/xwindow.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/ajaxform.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/pop.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/message.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/xtree.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgTree/jquery.json-2.4.min.js"></script>
+
+
+<style>
+    .dashed {
+        border-style: dashed;
+        border-width: 1px;
+    }
+</style>
+
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="<%=request.getContextPath()%>/static/plugins/bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -34,40 +95,9 @@
 <script src="<%=request.getContextPath()%>/static/plugins/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<!--<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+<!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
 <![endif]-->
-
-<link href="<%=request.getContextPath()%>/static/plugins/loading/load.css" rel="stylesheet">
-
-
-<script src="<%=request.getContextPath()%>/static/plugins/jquery/jquery.min.js"></script>
-
-<!--bootStrap JS -->
-<script src="<%=request.getContextPath()%>/static/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- bootstrap-table JS -->
-<script src="<%=request.getContextPath()%>/static/plugins/bootstrapTable/bootstrap-table.min.js"></script>
-<script src="<%=request.getContextPath()%>/static/plugins/bootstrapTable/locale/bootstrap-table-zh-CN.min.js"></script>
-
-<!-- orgchart JS -->
-<!-- the following reference is specific for IE -->
-<script src="https://cdn.bootcss.com/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/html2canvas.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/jspdf.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/orgChart/js/jquery.orgchart.js"></script>
-
-
-<!-- zTree JS -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.core.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.excheck.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/zTree/js/jquery.ztree.exedit.js"></script>
-
-
-<!-- layer -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/plugins/layer/layer.js"></script>
-
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -79,11 +109,16 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="<%=request.getContextPath()%>/static/plugins/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="<%=request.getContextPath()%>/static/plugins/loading/load.js"></script>
 
-<style>
-    .dashed {
-        border-style: dashed;
-        border-width: 1px;
-    }
-</style>
+
+
+
+
+
+
+
+
+
+
+
+

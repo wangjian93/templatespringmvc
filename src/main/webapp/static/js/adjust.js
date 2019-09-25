@@ -5,7 +5,7 @@ $(function() {
     var $chart = $('#signedDept_chart');
     renderChart($chart);
 
-
+    // renderDeptTable();
 });
 
 var search_click = function() {
@@ -76,7 +76,7 @@ function adjust_submit() {
 
     $.ajax({
         type: "POST",
-        url: "/adjust",
+        url: "adjust",
         data: {
             "source" : source,
             "target": target,

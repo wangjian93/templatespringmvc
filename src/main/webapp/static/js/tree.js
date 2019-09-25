@@ -29,7 +29,7 @@ function zTreeOnClick(event, treeId, treeNode) {
 function renderTree() {
     $.ajax({
         type: "POST",
-        url: "/listDept",
+        url: "listDept",
         data: {},
         dataType: "json",
         success: function (data) {

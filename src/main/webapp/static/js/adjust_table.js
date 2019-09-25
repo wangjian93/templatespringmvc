@@ -12,11 +12,10 @@ function renderTable($table) {
     ];
 
     adjust_table = $table.bootstrapTable({
-        url: '/listAdjust',
+        url: 'listAdjust',
         columns: columns,
         detailView: true,
         striped: true,
-        height: '200',
         detailFormatter: function(index, row) {
             return detailFormatter(index, row);
         }
@@ -50,7 +49,7 @@ function adjust_release() {
 
     $.ajax({
         type: "POST",
-        url: "/adjust/release",
+        url: "adjust/release",
         data: JSON.stringify(ids),
         contentType: "application/json" ,
         dataType: "json",
@@ -78,7 +77,7 @@ function adjust_delete() {
 
     $.ajax({
         type: "POST",
-        url: "/adjust/remove",
+        url: "adjust/remove",
         data: JSON.stringify(ids),
         contentType: "application/json",
         dataType: "json",
@@ -97,7 +96,95 @@ function adjust_delete() {
     });
 }
 
-
+var dept_table;
 var renderDeptTable = function() {
+    if(dept_table) {
+        $("#dept_table").bootstrapTable('refresh');
+        return;
+    }
+    var $table = $('#dept_table');
+    dept_table = $("#dept_table").bootstrapTable({
+        url: 'listSignedDept',
+        striped: true,
+        // sidePagination: 'server',
+        idField: 'deptId',
+        columns: [
+            {
+                field: 'deptId',
+                title: '部门编号'
+            },
+            {
+                field: 'deptName',
+                title: '部门名称'
+            },
+            {
+                field: 'deptNameS',
+                title: '部门简称'
+            },
+            {
+                field: 'deptLevel',
+                title: '级别'
+            },
+            {
+                field: 'deptHeader',
+                title: '主管'
+            },{
+                field: 'type',
+                title: '类型'
+            },{
+                field: 'parentId',
+                title: '上级部门'
+            }
+        ],
+        treeShowField: 'deptId',
+        parentIdField: 'parentId',
+        onLoadSuccess: function(data) {
+            $("#dept_table").treegrid({
+                treeColumn: 1,
+                onChange: function() {
+                    $("#dept_table").bootstrapTable('resetWidth')
+                }
+            })
+        }
 
-}
+        // onResetView: function(data) {
+        //     //console.log('load');
+        //     $table.treegrid({
+        //         initialState: 'collapsed',// 所有节点都折叠
+        //         // initialState: 'expanded',// 所有节点都展开，默认展开
+        //         treeColumn: 1,
+        //         // expanderExpandedClass: 'glyphicon glyphicon-minus',  //图标样式
+        //         // expanderCollapsedClass: 'glyphicon glyphicon-plus',
+        //         onChange: function() {
+        //             $table.bootstrapTable('resetWidth');
+        //         }
+        //     });
+        //
+        //     //只展开树形的第一级节点
+        //     $table.treegrid('getRootNodes').treegrid('expand');
+        //
+        // }
+        // ,
+        // onCheck:function(row){
+        //     var datas = $table.bootstrapTable('getData');
+        //     // 勾选子类
+        //     selectChilds(datas,row,"id","pid",true);
+        //
+        //     // 勾选父类
+        //     selectParentChecked(datas,row,"id","pid")
+        //
+        //     // 刷新数据
+        //     $table.bootstrapTable('load', datas);
+        // },
+        //
+        // onUncheck:function(row){
+        //     var datas = $table.bootstrapTable('getData');
+        //     selectChilds(datas,row,"id","pid",false);
+        //     $table.bootstrapTable('load', datas);
+        // }
+    });
+};
+
+var refreshDeptTable = function() {
+    $("#dept_table").bootstrapTable('refresh');
+};

@@ -1,20 +1,20 @@
 var oc;
 
 var getOption = function () {
-    var deptId = $("input[name]").val();
+    var deptId = $("input[name='source']").val();
     var ajaxURLs = {
-        'children': '/orgchart/children/',
-        'parent': '/orgchart/parent/',
+        'children': 'orgchart/children/',
+        'parent': 'orgchart/parent/',
         'siblings': function(nodeData) {
-            return '/orgchart/siblings/' + nodeData.id;
+            return 'orgchart/siblings/' + nodeData.id;
         },
         'families': function(nodeData) {
-            return '/orgchart/families/' + nodeData.id;
+            return 'orgchart/families/' + nodeData.id;
         }
     };
 
     var option = {
-        'data': '/listPathTree?deptId='+deptId,
+        'data': 'listPathTree?deptId='+deptId,
         'ajaxURL': ajaxURLs,
         'nodeTitle': 'deptName',
         'nodeContent': 'deptHeader',
@@ -42,13 +42,20 @@ var getOption = function () {
                 $node.prepend(secondMenuIcon);
             }
             $node.children(".topEdge").remove();
+
+            //设置虚拟部门样式
+            var deptType = data.deptType;
+            switch (deptType) {
+                case 2 : $node.css('border-color', 'grey'); break;
+                default : break;
+            }
         }
     };
     return option;
 };
 
-function renderChart($chart, deptId) {
-    oc = $chart.orgchart(getOption(deptId));
+function renderChart($chart) {
+    oc = $chart.orgchart(getOption());
 }
 
 var refreshChart = function () {

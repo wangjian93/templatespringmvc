@@ -30,7 +30,7 @@ var columns = [{
 var renderTable = function () {
     $('#table').bootstrapTable({
         toolbar: '#toolbar',
-        url: '/listAdjust',
+        url: 'listAdjust',
         striped: true,
         columns: columns
     });
@@ -60,7 +60,7 @@ var refreshTable = function() {
 var postRemove = function(ids) {
     $.ajax({
         type: 'POST',
-        url: '/manage/remove',
+        url: 'manage/remove',
         data: JSON.stringify(ids),
         contentType: "application/json" ,
         dataType: "json",
@@ -80,7 +80,7 @@ var postRemove = function(ids) {
 var postRelease = function(ids) {
     $.ajax({
         type: 'POST',
-        url: '/manage/release',
+        url: 'manage/release',
         data: JSON.stringify(ids),
         contentType: "application/json" ,
         dataType: "json",

@@ -153,7 +153,7 @@ var getChartData = function(deptId) {
     var r;
     $.ajax({
         type: "POST",
-        url: "/listSignedDeptTree",
+        url: "listSignedDeptTree",
         data: {
             "deptId" : deptId
         },
@@ -173,7 +173,7 @@ var getChartData = function(deptId) {
 function addPost(source, parentId, deptName, deptNameEN, deptNameS, deptLevel, deptHeader) {
     $.ajax({
         type: "POST",
-        url: "/adjust",
+        url: "adjust",
         data: {
             "source" : source,
             "target": source,
@@ -202,7 +202,7 @@ function mobilePost(source, deptId, parentId) {
     var flag = false;
     $.ajax({
         type: "POST",
-        url: "/manage/mobile",
+        url: "manage/mobile",
         data: {
             "source" : source,
             "deptId": deptId,
@@ -247,7 +247,7 @@ var addParentNode = function() {
 function addParentPost(source, parentId, deptName, deptNameEN, deptNameS, deptLevel, deptHeader) {
     $.ajax({
         type: "POST",
-        url: "/adjust",
+        url: "adjust",
         data: {
             "source" : source,
             "target": source,
