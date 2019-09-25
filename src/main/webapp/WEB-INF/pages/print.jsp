@@ -25,7 +25,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">组织签核图</a>
+            <a class="navbar-brand">组织层级图</a>
         </div>
     </div>
 </nav>
